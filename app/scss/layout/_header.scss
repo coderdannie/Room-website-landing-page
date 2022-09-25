@@ -1,0 +1,71 @@
+@use '../util/' as u;
+.header {
+  position: absolute;
+  width: 100%;
+  background-color: #555;
+
+  .nav {
+    &__toggle > span {
+      display: block;
+      width: u.rem(22);
+      height: u.rem(3);
+      background-color: u.$clr-neutral-700;
+      &:not(:first-child) {
+        margin-top: u.rem(3);
+      }
+      cursor: pointer;
+    }
+    &__close {
+      cursor: pointer;
+    }
+    min-height: u.rem(112);
+    padding-left: u.rem(24);
+    @include u.breakpoint-down(medium) {
+      width: 50%;
+      justify-content: space-between;
+    }
+    @include u.breakpoint-up(large) {
+      padding-left: u.rem(64);
+    }
+    color: u.$clr-neutral-700;
+
+    &__list li {
+      display: inline-block;
+      &:not(:first-child) {
+        padding-left: u.rem(32);
+      }
+      &:first-child {
+        padding-left: u.rem(56);
+      }
+      a {
+        color: u.$clr-neutral-700;
+        text-transform: lowercase;
+      }
+    }
+    &__toggle {
+      &--container {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: u.$clr-neutral-700;
+        // background-color: u.$clr-neutral-700;
+        padding-left: u.rem(26);
+      }
+    }
+
+    &__list--toggle li {
+      &:first-child {
+        padding-left: 0;
+      }
+      &:last-child {
+        padding-right: u.rem(26);
+      }
+      a {
+        color: u.$clr-neutral-100;
+        font-size: u.rem(12);
+      }
+    }
+  }
+}

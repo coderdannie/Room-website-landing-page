@@ -1,0 +1,77 @@
+@use '../util/' as u;
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  font-size: inherit;
+}
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+}
+body {
+  font-size: u.rem(16);
+  font-family: 'League Spartan', sans-serif;
+}
+a,
+a:visited,
+a:hover {
+  text-decoration: none;
+}
+//flexbox styles
+.flex {
+  display: flex;
+  &-jc-sb {
+    justify-content: space-between;
+  }
+  &-jc-c {
+    justify-content: center;
+  }
+  &-ai-c {
+    align-items: center;
+  }
+}
+.hide-for-mobile {
+  //hide for tablet and mobile devices
+  @include u.breakpoint-down(medium) {
+    display: none;
+  }
+}
+
+.hide-for-desktop {
+  //hide for desktop viewport widths
+  @include u.breakpoint-up(large) {
+    display: none;
+  }
+}
+.active {
+  display: none !important;
+}
