@@ -1,14 +1,20 @@
 @use '../util/' as u;
 .header {
-  position: absolute;
   width: 100%;
-  background-color: #555;
-
+  position: relative;
+  z-index: 500;
+  a {
+    font-size: u.rem(16);
+  }
+  .nav {
+    position: absolute;
+  }
   .nav {
     &__toggle > span {
       display: block;
       width: u.rem(22);
       height: u.rem(3);
+
       background-color: u.$clr-neutral-700;
       &:not(:first-child) {
         margin-top: u.rem(3);
@@ -44,14 +50,16 @@
     }
     &__toggle {
       &--container {
-        position: absolute;
+        height: u.rem(90);
+        position: fixed;
         top: 0;
-        bottom: 0;
+
         left: 0;
         right: 0;
         background-color: u.$clr-neutral-700;
         // background-color: u.$clr-neutral-700;
         padding-left: u.rem(26);
+        transition: 300ms ease-in-out;
       }
     }
 
@@ -64,7 +72,6 @@
       }
       a {
         color: u.$clr-neutral-100;
-        font-size: u.rem(12);
       }
     }
   }

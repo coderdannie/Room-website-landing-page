@@ -1,0 +1,92 @@
+@use '../util/' as u;
+.hero {
+  @include u.breakpoint-up(large) {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+  }
+  .carousel {
+    position: relative;
+
+    &__track {
+      position: relative;
+      width: 100%;
+      height: u.rem(370);
+      overflow: hidden;
+    }
+    &__slide {
+      width: 100%;
+      height: u.rem(370);
+      position: absolute;
+      top: 0;
+      display: flex;
+      justify-content: center;
+      // transition: transform 500ms;
+      &--third,
+      &--second,
+      &--first {
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+    &__btn {
+      &--left,
+      &--right {
+        cursor: pointer;
+      }
+      width: u.rem(112);
+      height: u.rem(58);
+      position: absolute;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background: u.$clr-neutral-100;
+      bottom: 0;
+      right: 0;
+    }
+  }
+  &__content--container {
+    @include u.breakpoint-down(medium) {
+      height: u.rem(370);
+    }
+    width: min(412px, 80%);
+    position: relative;
+    padding-top: u.rem(60);
+
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  &__content {
+    &--slide {
+      width: 100%;
+      height: u.rem(370);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      // transition: transform 500ms;
+    }
+  }
+  &__heading {
+    font-size: u.$fs-500;
+  }
+  &__text {
+    font-size: u.rem(15);
+    color: u.$clr-accent-400;
+    padding-top: u.rem(18);
+    padding-bottom: u.rem(40);
+  }
+  &__btn a {
+    font-family: u.$font;
+    color: u.$clr-neutral-100;
+    text-transform: uppercase;
+    letter-spacing: u.rem(10);
+  }
+}
