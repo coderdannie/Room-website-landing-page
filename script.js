@@ -71,7 +71,3 @@ document.addEventListener('keydown', function (e) {
   }
   e.key === 'ArrowRight' && nextSlide();
 });
-
-// setInterval(() => {
-//   nextSlide();
-// }, 3000);

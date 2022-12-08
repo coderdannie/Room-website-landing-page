@@ -14,6 +14,11 @@
     padding-bottom: u.rem(42);
     h5 {
       text-transform: uppercase;
+      font-size: u.rem(16);
+      letter-spacing: u.rem(5);
+    }
+    p {
+      color: u.$clr-accent-400;
     }
   }
 }
